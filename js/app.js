@@ -1,4 +1,5 @@
-var Enemy = function(x, y, speed) {
+let Enemy = function(x, y, speed) {
+    "use strict";
     this.x = x;
     this.y = y;
     this.speed = speed;
@@ -11,6 +12,7 @@ var Enemy = function(x, y, speed) {
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
+    "use strict";
     this.x += this.speed * dt;
 
     if (this.x >= 505) {
@@ -24,10 +26,8 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
-var Player = function(x, y, speed) {
+.
+Player = function(x, y, speed) {
     this.x = x;
     this.y = y;
     this.speed = speed;
@@ -40,6 +40,7 @@ Player.prototype.update = function() {
 
 
 Player.prototype.render = function() {
+    "use strict";
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     displayScoreLevel(score, gameLevel);
 
@@ -62,9 +63,9 @@ Player.prototype.handleInput = function(keyPress) {
 };
 
 
-var displayScoreLevel = function(aScore, aLevel) {
-    var canvas = document.getElementsByTagName('canvas');
-    var firstCanvasTag = canvas[0];
+let displayScoreLevel = function(aScore, aLevel) {
+    let canvas = document.getElementsByTagName('canvas');
+    let firstCanvasTag = canvas[0];
 
 
     scoreLevelDiv.innerHTML = 'Score: ' + aScore +
@@ -72,7 +73,8 @@ var displayScoreLevel = function(aScore, aLevel) {
     document.body.insertBefore(scoreLevelDiv, firstCanvasTag[0]);
 };
 
-var checkCollision = function(anEnemy) {
+let checkCollision = function(anEnemy) {
+    "use strict";
 
     if (
         player.y + 131 >= anEnemy.y + 90 &&
@@ -80,6 +82,7 @@ var checkCollision = function(anEnemy) {
         player.y + 73 <= anEnemy.y + 135 &&
         player.x + 76 >= anEnemy.x + 11) {
         console.log('collided');
+        this.wait();
         player.x = 202.5;
         player.y = 383;
     }
@@ -114,12 +117,12 @@ var checkCollision = function(anEnemy) {
 
 // Increase number of enemies on screen based on player's score
 var increaseDifficulty = function(numEnemies) {
-    // remove all previous enemies on canvas
+    "use strict";
     allEnemies.length = 0;
 
     // load new set of enemies
-    for (var i = 0; i <= numEnemies; i++) {
-        var enemy = new Enemy(0, Math.random() * 184 + 50, Math.random() * 256);
+    for (let i = 0; i <= numEnemies; i++) {
+        let enemy = new Enemy(0, Math.random() * 184 + 50, Math.random() * 256);
 
         allEnemies.push(enemy);
     }
@@ -129,12 +132,12 @@ var increaseDifficulty = function(numEnemies) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-var allEnemies = [];
-var player = new Player(202.5, 383, 50);
-var score = 0;
-var gameLevel = 1;
-var scoreLevelDiv = document.createElement('div');
-var enemy = new Enemy(0, Math.random() * 184 + 50, Math.random() * 256);
+let allEnemies = [];
+let player = new Player(202.5, 383, 50);
+let score = 0;
+let gameLevel = 1;
+let scoreLevelDiv = document.createElement('div');
+const enemy = new Enemy(0, Math.random() * 184 + 50, Math.random() * 256);
 
 allEnemies.push(enemy);
 
