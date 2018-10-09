@@ -13,13 +13,16 @@ The player can move left, right, up and down. The enemies move in varying speeds
 How to run the Project
 
 •	Clone the repository using https://github.com/padegalmadhuri/Classic-Arcard-Game.
+
 •Open index.html in your browser.
 
-If you want to play the game,click the below link
+•If you want to play the game,click the below link
 
-https://padegalmadhuri.github.io/Classic-Arcard-Game/
+  https://padegalmadhuri.github.io/Classic-Arcard-Game/
 
 Technologies Used
-•	Java script oops concept. 
-•	HTML canvas 
+
+ •	Java script oops concept.
+ 
+ •	HTML canvas 
 
