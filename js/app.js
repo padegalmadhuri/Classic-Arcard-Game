@@ -1,7 +1,7 @@
 let Enemy = function(x, y, speed) {
     "use strict";
     this.x = x;
-    this.y = y;
+    this.y = y;l
     this.speed = speed;
 
     // The image/sprite for our enemies, this uses
