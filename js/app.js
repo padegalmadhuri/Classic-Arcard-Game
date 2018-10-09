@@ -1,7 +1,7 @@
-let Enemy = function(x, y, speed) {
+var Enemy = function(x, y, speed) {
     "use strict";
     this.x = x;
-    this.y = y;l
+    this.y = y;
     this.speed = speed;
 
     // The image/sprite for our enemies, this uses
@@ -26,8 +26,11 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-.
-Player = function(x, y, speed) {
+// Now write your own player class
+// This class requires an update(), render() and
+// a handleInput() method.
+var Player = function(x, y, speed) {
+    "use strict";
     this.x = x;
     this.y = y;
     this.speed = speed;
@@ -40,13 +43,13 @@ Player.prototype.update = function() {
 
 
 Player.prototype.render = function() {
-    "use strict";
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     displayScoreLevel(score, gameLevel);
 
 };
 
 Player.prototype.handleInput = function(keyPress) {
+    "use strict";
     if (keyPress == 'left') {
         this.x -= this.speed;
     }
@@ -64,8 +67,8 @@ Player.prototype.handleInput = function(keyPress) {
 
 
 let displayScoreLevel = function(aScore, aLevel) {
-    let canvas = document.getElementsByTagName('canvas');
-    let firstCanvasTag = canvas[0];
+    const canvas = document.getElementsByTagName('canvas');
+    var firstCanvasTag = canvas[0];
 
 
     scoreLevelDiv.innerHTML = 'Score: ' + aScore +
@@ -73,7 +76,7 @@ let displayScoreLevel = function(aScore, aLevel) {
     document.body.insertBefore(scoreLevelDiv, firstCanvasTag[0]);
 };
 
-let checkCollision = function(anEnemy) {
+var checkCollision = function(anEnemy) {
     "use strict";
 
     if (
@@ -82,7 +85,7 @@ let checkCollision = function(anEnemy) {
         player.y + 73 <= anEnemy.y + 135 &&
         player.x + 76 >= anEnemy.x + 11) {
         console.log('collided');
-        this.wait();
+        alert('stop');
         player.x = 202.5;
         player.y = 383;
     }
@@ -117,7 +120,7 @@ let checkCollision = function(anEnemy) {
 
 // Increase number of enemies on screen based on player's score
 var increaseDifficulty = function(numEnemies) {
-    "use strict";
+    // remove all previous enemies on canvas
     allEnemies.length = 0;
 
     // load new set of enemies
@@ -132,12 +135,12 @@ var increaseDifficulty = function(numEnemies) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-let allEnemies = [];
-let player = new Player(202.5, 383, 50);
-let score = 0;
-let gameLevel = 1;
-let scoreLevelDiv = document.createElement('div');
-const enemy = new Enemy(0, Math.random() * 184 + 50, Math.random() * 256);
+var allEnemies = [];
+var player = new Player(202.5, 383, 50);
+var score = 0;
+var gameLevel = 1;
+var scoreLevelDiv = document.createElement('div');
+var enemy = new Enemy(0, Math.random() * 184 + 50, Math.random() * 256);
 
 allEnemies.push(enemy);
 
