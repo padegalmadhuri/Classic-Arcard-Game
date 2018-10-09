@@ -12,7 +12,7 @@ The player can move left, right, up and down. The enemies move in varying speeds
 
 How to run the Project
 
-•	Clone the repository using https://github.com/padegalmadhuri/Classic-Arcard-Game.git.
+•	Clone the repository using https://github.com/padegalmadhuri/Classic-Arcard-Game.
 •Open index.html in your browser.
 
 Technologies Used
