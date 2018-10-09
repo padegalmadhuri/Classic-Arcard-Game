@@ -1,7 +1,8 @@
 
 UDACITY CLASSIC ARCARD GAME PROJECT
 
-In this game you have a Player and Enemies (Bugs). 
+In this game you have a Player and Enemies (Bugs).
+
 GOAL OF THIS PROJECT
 
 The goal of the player is to reach the water,without colliding into any one of the enemies.
