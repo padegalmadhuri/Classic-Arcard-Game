@@ -16,6 +16,7 @@ How to run the Project
 •Open index.html in your browser.
 
 If you want to play the game,click the below link
+
 https://padegalmadhuri.github.io/Classic-Arcard-Game/
 
 Technologies Used
