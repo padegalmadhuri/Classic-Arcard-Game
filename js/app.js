@@ -1,4 +1,4 @@
-var Enemy = function(x, y, speed) {
+let Enemy = function(x, y, speed) {
     "use strict";
     this.x = x;
     this.y = y;
@@ -29,7 +29,7 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-var Player = function(x, y, speed) {
+let Player = function(x, y, speed) {
     "use strict";
     this.x = x;
     this.y = y;
@@ -76,17 +76,16 @@ let displayScoreLevel = function(aScore, aLevel) {
     document.body.insertBefore(scoreLevelDiv, firstCanvasTag[0]);
 };
 
-var checkCollision = function(anEnemy) {
+let checkCollision = function(anEnemy) {
     "use strict";
 
     if (
-        player.y + 131 >= anEnemy.y + 90 &&
-        player.x + 25 <= anEnemy.x + 88 &&
-        player.y + 73 <= anEnemy.y + 135 &&
-        player.x + 76 >= anEnemy.x + 11) {
+        player.y + 130 >= anEnemy.y + 89 &&
+        player.x + 20 <= anEnemy.x + 85 &&
+        player.y + 70 <= anEnemy.y + 130 &&
+        player.x + 67 >= anEnemy.x + 8) {
         console.log('collided');
-        alert('stop');
-        player.x = 202.5;
+                player.x = 202.5;
         player.y = 383;
     }
 
@@ -135,12 +134,12 @@ var increaseDifficulty = function(numEnemies) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-var allEnemies = [];
-var player = new Player(202.5, 383, 50);
-var score = 0;
-var gameLevel = 1;
-var scoreLevelDiv = document.createElement('div');
-var enemy = new Enemy(0, Math.random() * 184 + 50, Math.random() * 256);
+let allEnemies = [];
+let player = new Player(202.5, 383, 50);
+let score = 0;
+let gameLevel = 1;
+let scoreLevelDiv = document.createElement('div');
+const enemy = new Enemy(0, Math.random() * 184 + 50, Math.random() * 256);
 
 allEnemies.push(enemy);
 
